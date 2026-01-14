@@ -1,0 +1,40 @@
+
+{
+
+    "educations":[
+        {
+            "school":"",
+            "program":"",
+            "startDate":"2016-09",
+            "endDate":"2023-05",
+            "description":""
+        },
+
+        {
+            "school":"",
+            "program":"",
+            "startDate":"",
+            "endDate":"",
+            "description":""
+        }
+    ],
+
+    "experiences":[
+        {
+            "company":"",
+            "position":"",
+            "startDate":"",
+            "endDate":"",
+            "description":""
+        },
+
+        {
+            "company":"",
+            "position":"",
+            "startDate":"",
+            "endDate":"",
+            "description":""
+        }
+    ]
+}
+
