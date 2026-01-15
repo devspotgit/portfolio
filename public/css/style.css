@@ -1,0 +1,242 @@
+
+
+
+/* ---------------------------- initial style ----------------------------- */
+
+:root{
+    --primary:hsl(0, 59%, 20%);
+    --primary-light:hsl(0, 59%, 40%);
+    --primary-lighter:hsl(0, 59%, 60%);
+    --primary-lighter-plus:hsl(0, 59%, 80%);
+    --black:hsl(0, 0%, 0%);
+    --grey:hsl(0, 0%, 20%);
+    --grey-light:hsl(0, 0%, 40%);
+    --grey-lighter:hsl(0, 0%, 60%);
+    --grey-lighter-plus:hsl(0, 0%, 80%);
+    --white:hsl(0, 0%, 100%);
+}
+
+*{
+    padding:0;
+    margin:0;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+button{
+    cursor:pointer;
+    background-color:transparent;
+    border-width:0;
+    font-family:inherit;
+    font-size:inherit;
+}
+
+input{
+    font-family:inherit;
+    font-size:inherit;
+}
+
+.image-wrap{
+    position:relative;
+}
+
+.image-wrap > img{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.section-title{
+
+
+}
+
+
+html, body{
+    height:100%;
+    width:100%;
+}
+
+.root{
+    min-height:100%;
+    min-width:300px;
+    display:grid;
+    grid-template-columns:auto minmax(300px, 900px) auto;
+    grid-auto-rows:max-content;
+    position:relative;
+}
+
+.root > *:not(.footer, .page-overlay, .header, .hero){
+    grid-column:2/3;
+}
+
+.footer, .hero{
+    grid-column:1/-1;
+}
+
+/* ---------------------------- header ----------------------------- */
+
+.header{
+    position:fixed;
+    height:80px;
+    top:0;
+    left:0;
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    width:100%;
+    align-items:center;
+    z-index:3;
+    transition:background-color 0.6s;
+}
+
+.header > a{
+    font-size:1.1rem;
+    color:var(--primary);
+}
+
+.header > button{
+    display:none;
+}
+
+.header[scroll]{
+
+    &[size="sm"], &[size="md"], &[size="lg"], &[size="xl"], &[size="xxl"]{
+        
+        background-color:var(--primary);
+
+        > a{
+
+            color:var(--primary-lighter-plus);
+
+            &:hover{
+
+                color:var(--white);
+            }
+        }
+    }
+}
+
+.header[size="sm"]{
+    width:250px;
+    height:100vh;
+    flex-direction:column;
+    justify-content:initial;
+    align-items:initial;
+    transition:none;
+    left:-250px;
+    background-color:var(--primary);
+    padding-block:40px;
+    transition:left 0.6s;
+}
+
+.header[size="sm"] > button{
+    position:absolute;
+    top:5px;
+    right:-50px;
+    display:initial;
+    padding:10px;
+    background-color:var(--primary);
+    color:var(--white);
+}
+
+.header[size="sm"] > a{
+    color:var(--primary-lighter-plus);
+    text-align:center;
+}
+
+.header[size="sm"] > a:hover{
+    color:var(--white);
+}
+
+.header[size="sm"][open]{
+    left:0;
+}
+
+
+/* ---------------------------- page overlay ----------------------------- */
+
+.page-overlay{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-color:rgba(0,0,0,0.7);
+    z-index:2;
+    display:none;
+}
+
+.page-overlay[size="sm"][open]{
+    display:initial;
+}
+
+/* ---------------------------- hero ----------------------------- */
+
+.hero{
+    height:500px;
+    position:relative;
+}
+
+.hero-overlay{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-color:rgba(255,255,255,0.6);
+}
+
+.hero-info{
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    gap:40px;
+    z-index:1;
+    height:100%;
+    align-items:center;
+}
+
+.hero-info > span:first-child{
+    font-size:2rem;
+    color:var(--grey);
+}
+
+.hero-info > span:nth-child(2){
+    font-size:4rem;
+    color:var(--primary);
+    font-weight:bold;
+}
+
+.title{
+    display:flex;
+    gap:10px;
+    align-items:center;
+}
+
+.title > span:first-child, .title > span:last-child{
+    height:1px;
+    background-color:var(--primary);
+    width:100px;
+}
+
+.title > span:nth-child(2){
+    font-size:1.2rem;
+    color:var(--primary);
+    font-weight:bold;
+}
+
+
+
+
+
+
+
+

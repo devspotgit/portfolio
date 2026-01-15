@@ -3,37 +3,56 @@
 
     "educations":[
         {
-            "school":"",
-            "program":"",
+            "school":"University of Ottawa",
+            "program":"Computer Technology",
             "startDate":"2016-09",
             "endDate":"2023-05",
-            "description":""
+            "description":"Studied computer technology with hands-on experience in system setup, maintenance, networking, and basic software development, preparing for real-world IT and technical support roles."
         },
 
         {
-            "school":"",
-            "program":"",
-            "startDate":"",
-            "endDate":"",
-            "description":""
+            "school":"University of Ottawa",
+            "program":"Electrical Engineering",
+            "startDate":"2016-09",
+            "endDate":"2023-05",
+            "description":"Trained in electrical circuit design, electronics, power distribution, control systems, and troubleshooting through an Electrical Engineering program emphasizing practical and analytical problem-solving."
         }
     ],
 
     "experiences":[
         {
-            "company":"",
-            "position":"",
-            "startDate":"",
-            "endDate":"",
-            "description":""
+            "company":"Nokia",
+            "position":"Nokia Internship",
+            "startDate":"2020-01",
+            "endDate":"2020-05",
+            "description":"Supported IT operations by assisting with system maintenance, troubleshooting hardware and software issues, and contributing to day-to-day technical support activities."
         },
 
         {
-            "company":"",
-            "position":"",
-            "startDate":"",
-            "endDate":"",
-            "description":""
+            "company":"CPOS",
+            "position":"User support technician",
+            "startDate":"2023-02",
+            "endDate":"2025-07",
+            "description":"Provided technical support to end users by diagnosing and resolving hardware, software, and network issues while ensuring reliable system operation and user satisfaction."
+        }
+    ],
+
+    "contacts":{
+        "phone": "647-571-4366",
+        "email": "jpatricktadie@gmail.com"
+    },
+
+    "socials":[
+        {
+            "name": "Github",
+            "url": "",
+            "class": "fa-brands fa-github"
+        },
+
+        {
+            "name": "Linkedin",
+            "url": "",
+            "class": "fa-brands fa-linkedin"
         }
     ]
 }
