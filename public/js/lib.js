@@ -260,16 +260,49 @@ function contactForm(){
 
     const form = document.querySelector(".contact form")
 
-    form.addEventListener("submit", e => {
+    const submitButton = document.querySelector(".contact form button")
+
+    form.addEventListener("submit", async e => {
 
         e.preventDefault()
 
         const formData = new FormData(form)
 
-        
+        fetch("/contact", {
+
+            method:"POST",
+
+            headers:{
+
+                'Content-Type': 'application/json'
+            },
+
+            body: JSON.stringify(Object.fromEntries(formData.entries()))
+        })
+
+        .then(res => res.json())
+
+        .then(data => {
+
+            if(!data.error) {
+
+                submitButton.removeAttribute("disabled")
+
+                window.alert("Message sent, thank you")
+            }
+            
+            else {
+
+                submitButton.removeAttribute("disabled")
+
+                window.alert("something went wrong, try again later")
+            }
+        })
+
+        submitButton.setAttribute("disabled", "")
     })
 }
 
-export { jumpToSection, projectOnScroll, onResize, onScroll, headerControl, headerOnScroll, educationControl, projectInit }
+export { contactForm, jumpToSection, projectOnScroll, onResize, onScroll, headerControl, headerOnScroll, educationControl, projectInit }
 
 

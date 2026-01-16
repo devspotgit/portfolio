@@ -1,6 +1,6 @@
 
 
-import { projectOnScroll, projectInit, onResize, onScroll, headerControl, headerOnScroll, educationControl, jumpToSection } from "./lib.js"
+import { contactForm, projectOnScroll, projectInit, onResize, onScroll, headerControl, headerOnScroll, educationControl, jumpToSection } from "./lib.js"
 
 onResize()
 
@@ -19,6 +19,8 @@ headerControl()
 educationControl()
 
 jumpToSection()
+
+contactForm()
 
 
 

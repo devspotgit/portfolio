@@ -260,13 +260,14 @@ html, body{
 .title > span:first-child, .title > span:last-child{
     height:1px;
     background-color:var(--primary);
-    width:100px;
+    width:80px;
 }
 
 .title > span:nth-child(2){
     font-size:1.2rem;
     color:var(--primary);
     font-weight:bold;
+    text-align:center;
 }
 
 /* ---------------------------- about ----------------------------- */
@@ -580,6 +581,7 @@ html, body{
     gap:30px;
     padding:20px;
     background-color:var(--grey-light);
+    transition:background-color 0.5s;
 }
 
 .project-item-body > p{
@@ -734,6 +736,16 @@ html, body{
     background-color:var(--grey);
     height:150px;
     color:var(--grey-lighter);
+}
+
+.contact-form .action:disabled{
+    background-color:var(--grey-lighter);
+    color:var(--grey-light);
+}
+
+.contact-form .action:disabled:hover{
+    background-color:var(--grey-lighter);
+    color:var(--grey-light);
 }
 
 .contact-form form textarea::placeholder{

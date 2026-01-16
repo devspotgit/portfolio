@@ -213,7 +213,7 @@ function contact(contacts){
                 <form>
                     <input type="text" name="name" placeholder="Name" required>
                     <input type="email" name="email" placeholder="Email" required>
-                    <input type="tel"  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="phone" placeholder="Phone" required>
+                    <input type="tel"  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="phone" placeholder="Phone - eg. 843-323-2323" required>
                     <textarea placeholder="Message" name="message"></textarea>
                     <button class="action">Submit</button>
                 </form>
