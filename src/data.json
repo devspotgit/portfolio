@@ -37,21 +37,28 @@
         }
     ],
 
-    "contacts":{
-        "phone": "647-571-4366",
-        "email": "jpatricktadie@gmail.com"
-    },
+    "contacts":[
+        {
+            "label": "Phone",
+            "info": "647-571-4366"
+        },
+
+        {
+            "label": "Email",
+            "info": "jpatricktadie@gmail.com"
+        }
+    ],
 
     "socials":[
         {
             "name": "Github",
-            "url": "",
+            "url": "https://github.com/devspotgit/",
             "class": "fa-brands fa-github"
         },
 
         {
             "name": "Linkedin",
-            "url": "",
+            "url": "www.linkedin.com/in/patrick-tadie",
             "class": "fa-brands fa-linkedin"
         }
     ]

@@ -21,14 +21,22 @@ const projects = await fetch("https://webapps.devspot.ca/getlatest/3").then(res 
 
 const data = { educations, experiences, blogs, works, projects, contacts, socials }
 
-
 const app = express()
+
+
+app.use(express.json())
 
 
 app.get("/", (req, res) => {
 
 
     res.send(home(data))
+})
+
+
+app.post("/contact", (req, res) =>{
+
+
 })
 
 

@@ -133,6 +133,143 @@ function headerOnScroll(scrolly){
 }
 
 
-export { onResize, onScroll, headerControl, headerOnScroll }
+// education
+
+function educationControl(){
+
+    const controls = document.querySelectorAll(".education-header > button")
+
+    const items = document.querySelectorAll(".education-item")
+
+    let currentIndex = 0
+
+    controls[currentIndex].setAttribute("active", "")
+
+    items[currentIndex].setAttribute("active", "")
+
+    controls.forEach((control, index) => {
+
+        control.addEventListener("click", () => {
+
+            if(index != currentIndex){
+
+                controls[currentIndex].removeAttribute("active")
+
+                items[currentIndex].removeAttribute("active")
+
+                currentIndex = index
+
+                setTimeout(() => {
+
+                    controls[currentIndex].setAttribute("active", "")
+    
+                    items[currentIndex].setAttribute("active", "")
+                }, 300)
+            }
+        })
+    })
+}
+
+
+// project 
+
+function projectInit(){
+
+    const projectListWrap = document.querySelector(".project-list-wrap")
+
+    const projectList = document.querySelector(".project-list")
+
+    const projectItems = document.querySelectorAll(".project-item")
+
+    const projectListHeight = projectList.offsetHeight
+
+    projectListWrap.style.height = (projectItems.length + 1) * projectListHeight + "px"    
+}
+
+
+function projectOnScroll(){
+
+    const projectListWrap = document.querySelector(".project-list-wrap")
+
+    const projectList = document.querySelector(".project-list")
+
+    const projectItems = document.querySelectorAll(".project-item")
+
+    const projectListHeight = projectList.offsetHeight
+
+    const rect = projectListWrap.getBoundingClientRect()
+
+    const initial = 100
+
+    projectItems.forEach((item, index) => {
+
+        if(rect.top - initial <= - (index * projectListHeight) && rect.top - initial  > - (index + 1) * projectListHeight){
+    
+            if(!item.hasAttribute("active")) item.setAttribute("active", "")
+        }
+        else{
+
+            if(item.hasAttribute("active")) item.removeAttribute("active")
+        }
+    })
+}
+
+
+// jump to section
+
+function jumpToSection(){
+
+    const navItems = document.querySelectorAll(".nav-item")
+
+    const header = document.querySelector(".header")
+
+    const pageOverlay = document.querySelector(".page-overlay")
+
+    const initial = 40
+
+    navItems.forEach(item => {
+
+        item.addEventListener("click", e => {
+
+            e.preventDefault()
+
+            if(header.hasAttribute("open")) header.removeAttribute("open")
+
+            if(pageOverlay.hasAttribute("open")) pageOverlay.removeAttribute("open")
+
+            const sectionName = item.getAttribute("section")
+
+            const section = document.querySelector("."+sectionName)
+
+            const rect = section.getBoundingClientRect()
+
+            scrollTo({
+                
+                top: scrollY + (rect.top - initial),
+
+                behavior: "smooth"
+            })
+        })
+    })
+}
+
+
+// contact form
+
+function contactForm(){
+
+    const form = document.querySelector(".contact form")
+
+    form.addEventListener("submit", e => {
+
+        e.preventDefault()
+
+        const formData = new FormData(form)
+
+        
+    })
+}
+
+export { jumpToSection, projectOnScroll, onResize, onScroll, headerControl, headerOnScroll, educationControl, projectInit }
 
 

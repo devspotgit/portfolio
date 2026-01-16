@@ -9,14 +9,14 @@ function header(){
     return `
         <div class="header on-resize">
             <button><i class="fa-solid fa-bars"></i></button>
-            <a href="/">Home</a>
-            <a href="/">About</a>
-            <a href="/">Education</a>
-            <a href="/">Experience</a>
-            <a href="/">Blog</a>
-            <a href="/">Project</a>
-            <a href="/">Work</a>
-            <a href="/">Contact</a>
+            <a href="/" class="nav-item" section="hero">Home</a>
+            <a href="/about" class="nav-item" section="about">About</a>
+            <a href="/education" class="nav-item" section="education">Education</a>
+            <a href="/experience" class="nav-item" section="experience">Experience</a>
+            <a href="/blog" class="nav-item" section="blog">Blog</a>
+            <a href="/project" class="nav-item" section="project">Project</a>
+            <a href="/work" class="nav-item" section="work">Work</a>
+            <a href="/contact" class="nav-item" section="contact">Contact</a>
         </div>
     `
 }
@@ -43,14 +43,18 @@ function hero(){
 function about(){
 
     return `
-        <div class="about">
-            <div class="img-wrap">
-                <img src="">
+        <div class="about on-resize">
+            <div class="about-image-wrap">
+                <div class="image-wrap">
+                    <img src="https://i.ibb.co/TMBtgY4G/daniel-korpai-p-KRNx-Egu-Rg-M-unsplash.jpg">
+                </div>
             </div>
-            <div>
-                <span class="section-title">About Me</span>
+            <div class="about-info">
+                <div class="section-title">
+                    <span>About Me</span>
+                </div>
                 <p>I’m a passionate Web Developer and IT professional with a strong foundation in building modern, efficient, and user-focused digital solutions. I specialize in developing responsive web applications, integrating APIs, and solving technical problems with clean, maintainable code.</p>
-                <a href="/resume.pdf">DOWNLOAD CV</a>
+                <a href="/resume.pdf" class="action">DOWNLOAD CV</a>
             </div>
         </div>
     `
@@ -60,11 +64,13 @@ function education(educations){
 
     return `
         <div class="education">
-            <span class="section-title">Education</span>
+            <div class="section-title">
+                <span>Education</span>
+            </div>
             <div class="education-header">
                 ${
                     educations.map(educ => `
-                        <button>${educ.program}</button>
+                        <button class="action">${educ.program}</button>
                     `).join(" ")
                 }
             </div>
@@ -90,11 +96,13 @@ function experience(experiences){
 
     return `
         <div class="experience">
-            <span class="sectcion-title">Experiences</span>
+            <div class="section-title">
+                <span>Experiences</span>
+            </div>
             <div class="experience-list">
                 ${
                     experiences.map(exp => `
-                        <div class="experience-item">
+                        <div class="experience-item on-resize">
                             <div class="experience-item-header">
                                 <span>
                                     ${ months[+exp.startDate.split("-")[1] - 1] +", "+exp.startDate.split("-")[0] } - 
@@ -118,16 +126,18 @@ function blog(blogs){
 
     return `
         <div class="blog">
-            <span class="section-title">My Latest Blog</span>
-            <a href="https://blog.devspot.ca">Visit my blog</a>
-            <div class="blog-list">
+            <div class="section-title">
+                <span>My Latest Blog</span>
+            </div>
+            <a href="https://blog.devspot.ca" class="action">Visit my blog</a>
+            <div class="blog-list on-resize">
                 ${
                     blogs.map(item => `
                         <div class="blog-item">
                             <span>${getDate(item.date)}</span>
                             <span>${getName(item.slug)}</span>
                             <p>${item.preview}</p>
-                            <a href="https://blog.devspot.ca/posts/${item.slug}">Read more</a>
+                            <a href="https://blog.devspot.ca/posts/${item.slug}" class="action">Read more</a>
                         </div>
                     `).join(" ")
                 }
@@ -140,24 +150,26 @@ function project(projects){
 
     return `
         <div class="project">
-            <span class="section-title">My Latest Projects</span>
-            <a href="https://webapps.devspot.ca">Visit my project site</a>
-            <div class="project-list">
-                ${
-                    projects.map(item => `
-                        <div class="project-item">
-                            <div class="project-item-header">
+            <div class="section-title">
+                <span>My Latest Projects</span>
+            </div>
+            <a class="action" href="https://webapps.devspot.ca">Visit my project site</a>
+            <div class="project-list-wrap">
+                <div class="project-list">
+                    ${
+                        projects.map(item => `
+                            <div class="project-item on-resize">
                                 <div class="image-wrap">
                                     <img src="${item.image}">
                                 </div>
-                                <a href="${item.url}">Try the app</a>
+                                <div class="project-item-body">
+                                    <p>${item.description}</p>
+                                    <a class="action" href="${item.url}">Try the app</a>
+                                </div>
                             </div>
-                            <div class="project-item-body">
-                                <p>${item.description}</p>
-                            </div>
-                        </div>
-                    `).join(" ")
-                }
+                        `).join(" ")
+                    }
+                </div>
             </div>
         </div>
     `
@@ -166,10 +178,12 @@ function project(projects){
 function work(works){
 
     return `
-        <div class="work">
-            <div>
-                <span class="section-title">My Latest Work</span>
-                <a href="https://websites.devspot.ca">Explore more websites</a>
+        <div class="work on-resize">
+            <div class="work-header">
+                <div class="section-title">
+                    <span>My Latest Work</span>
+                </div>
+                <a href="https://websites.devspot.ca" class="action">Explore more websites</a>
             </div>
             <div class="work-list">
                 ${
@@ -179,6 +193,7 @@ function work(works){
                                 <img src="${item.image}">
                             </div>
                             <span>${getName(item.slug)}</span>
+                            <a href="https://websites.devspot.ca/sites/${item.slug}/index.html" class="action">Visit the site</a>
                         </div>
                     `).join(" ")
                 }
@@ -187,11 +202,45 @@ function work(works){
     `
 }
 
-function contact(){
+function contact(contacts){
 
     return `
-        <div class="contact">
-        
+        <div class="contact on-resize">
+            <div class="contact-form">
+                <div class="section-title">
+                    <span>Get in touch</span>
+                </div>
+                <form>
+                    <input type="text" name="name" placeholder="Name" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="tel"  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="phone" placeholder="Phone" required>
+                    <textarea placeholder="Message" name="message"></textarea>
+                    <button class="action">Submit</button>
+                </form>
+            </div>
+            <div class="contact-info">
+                <div class="section-title">
+                    <span>Contact details</span>
+                </div>
+                <div class="contact-detail">
+                    ${
+                        contacts.map(item => `
+                            <div class="contact-detail-item">
+                                ${
+                                    item.label == "Phone" ? `
+                                        <span>${item.label}</span>
+                                        <a href="tel:${item.info}">${item.info}</a>
+                                    `: 
+                                    `
+                                        <span>${item.label}</span>
+                                        <a href="mailto:${item.info}">${item.info}</a>
+                                    `
+                                }
+                            </div>
+                        `).join(" ")
+                    }
+                </div>
+            </div>
         </div>
     `
 }
