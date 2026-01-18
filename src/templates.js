@@ -32,7 +32,7 @@ function hero(){
                 <span>Patrick</span>
                 <div class="title">
                     <span></span>
-                    <span>Web Developper</span>
+                    <span>Web Developer</span>
                     <span></span>
                 </div>
             </div>
@@ -54,7 +54,7 @@ function about(){
                     <span>About Me</span>
                 </div>
                 <p>I’m a passionate Web Developer and IT professional with a strong foundation in building modern, efficient, and user-focused digital solutions. I specialize in developing responsive web applications, integrating APIs, and solving technical problems with clean, maintainable code.</p>
-                <a href="/resume.pdf" class="action">DOWNLOAD CV</a>
+                <a href="/Resume.pdf" target="_blank" class="action">DOWNLOAD CV</a>
             </div>
         </div>
     `
